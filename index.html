@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X23</title>
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+ 
+  <header>
+    <div class="nav-bar">
+      <a href="" class="logo">ROYX23</a>
+      <div class="navigation">
+        <div class="nav-items">
+          <i class="uil uil-times nav-close-btn"></i>
+          <a href="#home"><i class="uil uil-home"></i> Home</a>
+          <a href="#"><i class="uil uil-compass"></i> About</a>
+          <a href="#"><i class="uil uil-info-circle"></i> Explore</a>
+          <a href="#"><i class="uil uil-envelope"></i> Contact</a>
+        </div>
+      </div>
+      <i class="uil uil-apps nav-menu-btn"></i>
+    </div>
+  </header>
+
+  <div class="splash-screen">
+    <div class="splash-icon"></div>
+  </div>
+
+  <div class="intro-page">
+    <h1>Welcome to ROYX23</h1>
+    <p>Discover a world of dynamism and youthfulness</p>
+    <a href="#" class="button" onclick="hideIntroPage()">Get Started</a>
+  </div>
+
+  <!--<section class="home">
+    <div class="media-icons">
+      <a href="#"><i class="uil uil-facebook-f"></i></a>
+      <a href="#"><i class="uil uil-instagram"></i></a>
+      <a href="#"><i class="uil uil-twitter"></i></a>
+    </div>-->
+
+    <div id ="home" class="swiper bg-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="1.JPG" alt="">
+          <div class="text-content">
+            <h2 class="title">Xin <span>Chào</span></h2>
+            <p>Năng Động</p>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="2.jpg" alt="">
+          <div class="text-content">
+            <h2 class="title">Các<span>Bạn</span></h2>
+            <p>Tuổi Trẻ</p>
+          </div>
+        </div>
+        <div class="swiper-slide dark-layer">
+          <img src="3.jpg" alt="">
+          <div class="text-content">
+            <h2 class="title">Chúng<span>Tớ</span></h2>
+            <p>Thanh Xuân</p>
+            
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="4.jpg" alt="">
+          <div class="text-content">
+            <h2 class="title">Là <span>ROYX23</span></h2>
+            <p>Nhiệt Huyết</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-slider-thumbs">
+      <div class="swiper-wrapper thumbs-container">
+        <img src="1.JPG" class="swiper-slide" alt="">
+        <img src="2.jpg" class="swiper-slide" alt="">
+        <img src="3.jpg" class="swiper-slide" alt="">
+        <img src="4.jpg" class="swiper-slide" alt="">
+      </div>
+    </div>
+  </section>
+
+  <audio id="intro-audio" loop>
+    <source src="audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

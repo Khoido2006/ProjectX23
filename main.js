@@ -12,7 +12,7 @@ var swiper = new Swiper(".bg-slider-thumbs", {
       swiper: swiper,
     },
     autoplay: {
-      delay: 3000, // Set the delay between slides in milliseconds
+      delay: 5000, // Set the delay between slides in milliseconds
       disableOnInteraction: false, // Continue autoplay even when user interacts with the slider
     },
     navigation: {
@@ -38,7 +38,7 @@ var swiper = new Swiper(".bg-slider-thumbs", {
   // Navigation bar effects on scroll
   window.addEventListener("scroll", function(){
     const header = document.querySelector("header");
-    header.classList.toggle("sticky", window.scrollY > 0);
+    header.classList.toggle("sticky",windowScrollY > 0);
   });
   
   
@@ -46,21 +46,23 @@ var swiper = new Swiper(".bg-slider-thumbs", {
   const menuBtn = document.querySelector(".nav-menu-btn");
   const closeBtn = document.querySelector(".nav-close-btn");
   const navigation = document.querySelector(".navigation");
-  
+
   menuBtn.addEventListener("click", () => {
-    navigation.classList.add("active");
+    navigation.classList.add(active)
   });
   
   closeBtn.addEventListener("click", () => {
-    navigation.classList.remove("active");
-  });
+    navigation.classList.remove(active)
   
+  });
+
   
     function hideIntroPage() {
       var introPage = document.querySelector('.intro-page');
       introPage.classList.add('hide');
     }
 
+    
     document.addEventListener("DOMContentLoaded", function() {
       var introPage = document.querySelector('.intro-page');
       var splashScreen = document.querySelector('.splash-screen');
@@ -82,9 +84,37 @@ var swiper = new Swiper(".bg-slider-thumbs", {
         audioElement.play(); // Play the audio when hiding the intro page
       }
     });
+ 
+    const cursor = document.querySelector(".cursor");
+    var timeout;
   
-
+    // Follow cursor on mousemove
+    document.addEventListener("mousemove", (e) => {
+      let x = e.pageX;
+      let y = e.pageY;
   
-
-
+      cursor.style.top = y + "px";
+      cursor.style.left = x + "px";
+      cursor.style.display = "block";
   
+      // Cursor effects when mouse stopped
+      function mouseStopped() {
+        cursor.style.display = "none";
+      }
+  
+      clearTimeout(timeout);
+      timeout = setTimeout(mouseStopped, 1000);
+    });
+  
+    // Cursor effects when mouseout of the document
+    document.addEventListener("mouseout", () => {
+      cursor.style.display = "none";
+    });
+  
+    // Check if intro page and toggle cursor visibility
+    if (document.body.classList.contains("intro-page")) {
+      // Hide cursor only when mouse is inside the intro page content
+      document.querySelector(".intro-page").addEventListener("mouseover", () => {
+        cursor.style.display = "none";
+      });
+    }  

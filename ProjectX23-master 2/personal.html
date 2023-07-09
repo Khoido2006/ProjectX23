@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nguyễn Trần Khôi Nguyên</title>
+  <link rel="stylesheet" href="personal.css">
+</head>
+<body>
+  <div class ="container">
+    <div class="image"></div>
+    <div class="content">
+      <div class="name-container">
+        <h1>Khoi Nguyen</h1>
+        <p id="intro">X23 member.</p>
+      </div>
+      <div class="about-container">
+        <p class="about" id="about-id">About</p>
+        <hr class="line">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum magna eget est feugiat ultrices. Aliquam tristique mi eget felis interdum finibus. Phasellus tempor elit eget lorem bibendum consequat. Fusce condimentum consequat felis ut iaculis. Sed in lobortis purus. Nam sit amet justo quis enim efficitur aliquam vitae in quam.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="nav-container">
+    <div class="nav-icon" onclick="toggleNavDropdown()">&#9776;</div>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="#intro" onclick="hideNavDropdown()">Home</a>
+      <a href="#about-id" onclick="hideNavDropdown()">About</a>
+      <a href="#" onclick="hideNavDropdown()">Contact</a>
+    </div>
+  </div>
+
+  <!-- Back to Main Screen Icon -->
+  <div class="back-icon" onclick="goToMainScreen()">&times;</div>
+
+  <script>
+    function toggleNavDropdown() {
+      var navDropdown = document.getElementById("navDropdown");
+      navDropdown.classList.toggle("show");
+      
+      var backIcon = document.querySelector(".back-icon");
+      backIcon.style.display = navDropdown.classList.contains("show") ? "block" : "none";
+      
+      if (navDropdown.classList.contains("show")) {
+        document.addEventListener("click", closeNavDropdownOnClickOutside);
+      } else {
+        document.removeEventListener("click", closeNavDropdownOnClickOutside);
+      }
+    }
+    
+    function closeNavDropdownOnClickOutside(event) {
+      var navDropdown = document.getElementById("navDropdown");
+      var navContainer = document.querySelector(".nav-container");
+      if (!navDropdown.contains(event.target) && !navContainer.contains(event.target)) {
+        hideNavDropdown();
+      }
+    }
+    
+    function hideNavDropdown() {
+      var navDropdown = document.getElementById("navDropdown");
+      navDropdown.classList.remove("show");
+      document.removeEventListener("click", closeNavDropdownOnClickOutside);
+      document.querySelector(".back-icon").style.display = "none";
+    }
+  </script>
+</body>
+</html>

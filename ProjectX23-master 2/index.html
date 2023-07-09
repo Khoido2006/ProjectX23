@@ -35,16 +35,16 @@
   </head>
 
   <body>
-    <header>
-      <div class="nav-bar">
-        <a href="index.html" class="logo">ROYX23</a>
+    <header id ="header">
+      <div class="nav-bar" id="nav">
+        <a href="" class="logo" id ="logo-nav">ROYX23</a>
         <div class="navigation">
           <div class="nav-items">
             <i class="uil uil-times nav-close-btn"></i>
-            <a href="index.html"><i class="uil uil-home"></i> Home</a>
-            <a href="explore.html" id="explore-link"><i class="uil uil-compass"></i> Explore</a>
-            <a href="#band"><i class="uil uil-info-circle"></i> About</a>
-            <a href="#contact"><i class="uil uil-envelope"></i> Contact</a>
+            <a href="#main"><i class="uil uil-home" id="home-icon"></i> Home</a>
+            <a href="explore.html" target="_blank" id="explore-icon"><i class="uil uil-compass" id="explore-link"></i> Explore</a>
+            <a href="#band"><i class="uil uil-info-circle" id="about-icon"></i> About</a>
+            <a href="#contact"><i class="uil uil-envelope" id ="contact-icon"></i> Contact</a>
           </div>
         </div>
         <i class="uil uil-apps nav-menu-btn"></i>
@@ -56,8 +56,8 @@
     </div>
 
     <div class="intro-page">
-      <h1>Welcome to ROYX23</h1>
-      <p>Discover a world of dynamism and youthfulness</p>
+      <h1 class="welcome">Welcome to ROYX23</h1>
+      <p class="a">Discover a world of dynamism and youthfulness</p>
       <a href="#" class="button" onclick="hideIntroPage()">Get Started</a>
       <div class="cursor"></div>
     </div>
@@ -94,10 +94,10 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <img src="4-1.jpg" alt="" />
+            <img src="4.jpg" alt="" />
             <div class="text-content">
-              <h2 class="title">Là <span>ROYX23</span></h2>
-              <p>Nhiệt Huyết</p>
+              <h2 class="title">Là <span>Tập Thể</span></h2>
+              <p>Mạnh nhất</p>
             </div>
           </div>
         </div>
@@ -109,8 +109,7 @@
           <img src="2.jpg" class="swiper-slide" alt="" />
           <img src="6.jpg" class="swiper-slide" alt="" />
           <img src="7.jpg" class="swiper-slide" alt="" />
-          <img src="4-1.jpg" class="swiper-slide" alt="" />
-
+          <img src="4.jpg" class="swiper-slide" alt="" />
         </div>
       </div>
     </section>
@@ -165,7 +164,7 @@
             style="width:60%"
           />
         </div>
-        <div class="w3-third">
+       <!--<div class="w3-third">
           <p>Phuc</p>
           <img
             src="/img/bphuc.jpeg"
@@ -173,7 +172,7 @@
             alt="Random Name"
             style="width:60%"
           />
-        </div>
+       </div -->
       </div>
     </div>
 
@@ -225,7 +224,7 @@
       </div>
     </div>
 
-    <img src="truong.jpg" class="img-tr" style="width:100%"/>
+    <img src="truong.jpg" class="img-tr" style="width:100%" />
 
     <!-- Include the ScrollReveal library -->
     <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
@@ -269,6 +268,15 @@
           reset: true
       });
       ScrollReveal().reveal('.img-tr', {
+          duration: 1000,
+          delay: 200,
+          distance: '50px',
+          origin: 'bottom',
+          easing: 'ease-in-out',
+          mobile: false,
+          reset: true
+      });
+      ScrollReveal().reveal('.circle-image', {
           duration: 1000,
           delay: 200,
           distance: '50px',
@@ -325,7 +333,7 @@
         var map = L.map('map').setView([16.07490457486075, 108.2194618517467], 14); // Coordinates of Da Nang, Viet Nam and zoom level
         
         // Add a dark-themed TileLayer to the map
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
         }).addTo(map);
         
@@ -356,5 +364,14 @@
       // Call the initMap function when the page loads
       window.addEventListener('load', initMap);
     </script>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; DESIGNED BY KD&KN</p>
+    <div class="footer-images">
+      <img src="knkd.jpg" alt="Circle Image 2" class="circle-image" />
+    </div>
+  </div>
+</footer>
   </body>
 </html>

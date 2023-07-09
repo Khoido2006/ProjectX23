@@ -244,6 +244,9 @@ header.sticky{
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+.black-bg {
+  background-color: black;
+}
 
 header .nav-bar{
   position: relative;
@@ -354,7 +357,7 @@ header .nav-bar{
 }
 
 .swiper-slide .text-content p{
-  max-width: 140px;
+  max-width: 100px;
   background: rgba(146, 25, 25, 0.167);
   backdrop-filter: blur(10px);
   text-shadow: var(--text-shadow);
@@ -483,6 +486,13 @@ header .nav-bar{
   transition: opacity 1s ease, transform 1s ease;
 }
 
+.navbar {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+
+
 /*======= About section =======*/
 .about h2{
   font-size: 3em;
@@ -559,15 +569,6 @@ header .nav-bar{
   max-width: 200px;
   height: auto;
 }
-
-.w3-third p {
-  margin-bottom: 5px;
-  text-align: center;
-  font-size: 15px;
-  font-family: 'Roboto Mono', monospace;
-  margin-top: 50px;
-}
-
 .w3-row {
   display: flex;
   justify-content: center;
@@ -596,10 +597,27 @@ header .nav-bar{
 }
 .sr-text {
   font-family: 'Roboto Mono', monospace;
+  font-size: 15px;
 
 }
 
+.welcome {
+  font-size: 15px; /* Adjust the font size as desired */
+  text-align: center;
+}
 
+.a {
+  font-size: 16px; /* Adjust the font size as desired */
+  text-align: center;
+}
+
+.w3-third p {
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 50px;
+}
 
 /*======= Media queries (max-width: 785px) =======*/
 @media screen and (max-width: 785px){
@@ -763,3 +781,26 @@ header .nav-bar{
   transform: translate(-30%, -30%);
   border-radius: 50%;
 }
+
+
+/* CSS styles */
+.footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-images {
+  margin-top: 20px;
+}
+
+.circle-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
